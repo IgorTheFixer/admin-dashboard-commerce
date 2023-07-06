@@ -1,5 +1,12 @@
-export default function Home() {
+import { UserButton } from "@clerk/nextjs"
+
+const RootPage =() => {
   return (
-    <p>hello dashboard</p>
+    <div>
+      <p>hello dashboard</p>
+      <UserButton afterSignOutUrl="/" />
+    </div>
   )
 }
+
+export default RootPage
