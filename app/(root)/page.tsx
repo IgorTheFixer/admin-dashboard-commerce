@@ -11,7 +11,7 @@ const RootPage =() => {
     if (!isOpen){
       onOpen()
     }
-  },[])
+  },[isOpen, onOpen])
 
   return (
     <div>
