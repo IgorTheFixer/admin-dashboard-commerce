@@ -1,15 +1,21 @@
 'use client'
 
-import { Modal } from "@/components/ui/modal"
-import { UserButton } from "@clerk/nextjs"
+import { useStoreModal } from "@/hooks/useStoreModal"
+import { useEffect } from "react"
 
 const RootPage =() => {
+  const onOpen = useStoreModal((state) => state.onOpen)
+  const isOpen = useStoreModal((state) => state.isOpen)
+
+  useEffect(()=>{
+    if (!isOpen){
+      onOpen()
+    }
+  },[])
+
   return (
     <div>
-      <p>hello dashboard</p>
-      <Modal title="Test" description="Test Description" isOpen onClose={()=> {}}>
-        Children
-      </Modal>
+      Placeholder
     </div>
   )
 }
