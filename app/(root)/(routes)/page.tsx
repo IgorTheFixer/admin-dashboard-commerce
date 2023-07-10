@@ -13,11 +13,6 @@ const RootPage =() => {
     }
   },[isOpen, onOpen])
 
-  return (
-    <div>
-      Placeholder
-    </div>
-  )
+  return null
 }
-
 export default RootPage
