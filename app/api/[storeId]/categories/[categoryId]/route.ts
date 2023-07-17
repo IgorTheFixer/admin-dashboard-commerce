@@ -15,6 +15,9 @@ export async function GET(
     const category = await prismadb.category.findUnique({
       where: {
         id: params.categoryId
+      },
+      include: {
+        billboard: true
       }
     });
   
@@ -80,14 +83,13 @@ export async function PATCH(
       return new NextResponse("Unauthenticated", { status: 403 });
     }
 
-    if (!name) {
-      return new NextResponse("Name is required", { status: 400 });
-    }
-
     if (!billboardId) {
       return new NextResponse("Billboard ID is required", { status: 400 });
     }
 
+    if (!name) {
+      return new NextResponse("Name is required", { status: 400 });
+    }
 
     if (!params.categoryId) {
       return new NextResponse("Category id is required", { status: 400 });
