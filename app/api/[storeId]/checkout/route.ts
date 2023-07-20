@@ -42,8 +42,7 @@ export async function POST(
         product_data: {
           name: product.name,
         },
-        // unit_amount: product.price.toNumber() * 100
-        unit_amount: 42
+        unit_amount: (+product.price)* 100
       }
     });
   });
