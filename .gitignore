@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+#database info
+pscale_dump_ecommerce-admin_main_20240417_225407
